@@ -1,4 +1,6 @@
-const menu = {
+type MenuItem = { name: string; desc: string; price: string }
+
+const menu: Record<string, MenuItem[]> = {
   Espresso: [
     { name: 'Espresso', desc: 'Bold, classic shot', price: '$3.00' },
     { name: 'Americano', desc: 'Espresso with hot water', price: '$3.50' },

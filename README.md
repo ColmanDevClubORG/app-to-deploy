@@ -6,7 +6,26 @@ A small React + Vite coffee shop website (Bean Scene) for practicing deployment 
 
 - **Home** — hero section and features
 - **Menu** — espresso, cold drinks, and pastries
-- **About** — store info, hours, contact
+- **About** — store info, hours, contact, and a live weather widget powered by WeatherAPI.com
+
+## API key setup (required)
+
+The About page calls `/api/weather`, a Vercel serverless function that uses a WeatherAPI.com key. **Without the key the widget will error.**
+
+1. Sign up at [weatherapi.com/signup.aspx](https://www.weatherapi.com/signup.aspx) — instant, no credit card. Find your key at [weatherapi.com/my](https://www.weatherapi.com/my/).
+2. **For local dev:** copy `.env.example` to `.env` and paste your key:
+   ```bash
+   cp .env.example .env
+   npm run dev
+   ```
+   A small Vite dev middleware in `vite.config.js` mirrors the serverless function so `/api/weather` works locally too.
+3. **For Vercel:** in your project dashboard → **Settings → Environment Variables**, add:
+   - Name: `API_WEATHER_KEY`
+   - Value: your key
+   - Apply to: Production, Preview, Development
+   Then redeploy.
+
+> The key lives only on the server — it's never sent to the browser.
 
 ## Run locally
 
@@ -56,6 +75,6 @@ Follow the prompts. Use `vercel --prod` for a production deployment.
 
 ## Stack
 
-- React 18
+- React 18 + TypeScript
 - React Router 6
 - Vite 5

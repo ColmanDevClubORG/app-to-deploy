@@ -1,7 +1,12 @@
+import Weather from '../components/Weather'
+
 export default function About() {
   return (
     <div className="page">
       <h1>About Us</h1>
+
+      <Weather city="Tel Aviv" />
+
       <p>
         Bean Scene opened its doors in 2018 with a simple mission: serve great coffee
         in a place where everyone feels at home. We're a neighborhood spot, run by
