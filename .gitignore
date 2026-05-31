@@ -4,6 +4,17 @@ dist-ssr
 .env
 .env.local
 .vercel
+
+# TS build artifacts
+*.tsbuildinfo
+vite.config.d.ts
+
+# Vite dev cache
+vite.config.*.timestamp-*.mjs
+vite.config.js
+*.timestamp-*.mjs
+
+# OS / editor
 .DS_Store
 *.log
 .vscode
